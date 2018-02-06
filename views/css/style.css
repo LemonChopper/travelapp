@@ -1,0 +1,45 @@
+
+
+
+h1{
+  color: black;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+img{
+  padding: 10px;
+}
+.button{
+  border-style: none;
+  border-radius: 10px;
+  /* background-color: #7caeff; */
+  width: 10%;
+  height: 45px;
+  text-align: center;
+  font-size: 30px;
+  margin: 10px;
+  padding: 0;
+}
+.buttons{
+  font-family: 'Bree Serif', serif;
+  display: flex;
+  justify-content: center;
+}
+
+#like{
+  background-color: green;
+}
+#dislike{
+  background-color: red;
+}
+
+.button:hover{
+  opacity: 0.8;
+}
