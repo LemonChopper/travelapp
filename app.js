@@ -2,6 +2,8 @@
 const express = require('express')
 const logger = require("morgan")
 const bodyParser = require('body-parser');
+var photoNum = 0
+const photoList = ['photos/photo1.jpg', 'photos/photo2.jpg', 'photos/photo3.jpg']
 
 //Create instance of app
 const app = express()
@@ -21,7 +23,15 @@ app.use(logger('dev'))
 // END SETUP
 
 //CHANGE THIS LINK IF WE NEED TO CHANGE THE IMAGE INPUT SOURCE
-app.get('/', (req,res) => res.render('index.ejs', {photo:"https://picsum.photos/300/300/?random"}))
+app.get('/', (req,res) => {
+  res.render('index.ejs', {photo: photoList[photoNum]})
+  if(photoNum >= photoList.length-1){
+    photoNum = 0
+  }
+  else{
+    photoNum++
+  }
+})
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
 
 /////////////////END OF REQUIRED STUFF///////////////////
